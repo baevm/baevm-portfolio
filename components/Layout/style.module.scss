@@ -1,0 +1,29 @@
+// 'http://assets.iceable.com/img/noise-transparent.png'
+.background_noise {
+  animation: bg-animation 0.5s steps(10) infinite;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: auto;
+  height: 100vh;
+  left: 0;
+  opacity: 1;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: opacity 1s ease-out;
+  width: 100vw;
+  z-index: 102;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}

@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'monumentExtended';
+  font-weight: 200;
+  src: url('/fonts/PPMonumentExtended-Light.otf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'monumentExtended';
+  font-weight: 450;
+  src: url('/fonts/PPMonumentExtended-Regular.otf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'monumentExtended';
+  font-weight: 800;
+  src: url('/fonts/PPMonumentExtended-Black.otf');
+  font-display: swap;
+}
+
+html,
+body {
+  font-family: monumentExtended, Verdana, sans-serif;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
