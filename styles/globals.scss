@@ -20,12 +20,6 @@
 html,
 body {
   font-family: monumentExtended, Verdana, sans-serif;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 a {
@@ -38,4 +32,10 @@ a {
   padding: 0;
   box-sizing: border-box;
   cursor: none;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }

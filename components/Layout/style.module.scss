@@ -15,8 +15,9 @@
   z-index: 102;
 }
 
-.container::-webkit-scrollbar {
-  display: none;
+.children {
+  position: absolute;
+  z-index: 1000;
 }
 
 @keyframes bg-animation {

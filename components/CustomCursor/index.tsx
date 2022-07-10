@@ -76,99 +76,23 @@ const CustomCursor = () => {
               <feGaussianBlur in='SourceGraphic' stdDeviation='50'></feGaussianBlur>
             </filter>
           </defs>
-          <g
-            filter='url(#blur-particles)'
-            transform='scale(1)'
-            transform-origin={`${pos.x} ${pos.y}`} /* style={{ transformOrigin: (pos.x, pos.y) }} */
-          >
+          <g filter='url(#blur-particles)' transform='scale(1)' transform-origin={`${pos.x} ${pos.y}`}>
             <rect fill='none' width='1777' height='581' y='0' x='0'></rect>
-            <circle fill='#58a1f3' fillOpacity='1' cx={pos.x + 25} cy={pos.y + 25} r='147.5' id='15'></circle>
-            <circle
-              fill='#579df4'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='149.60714285714286'
-              id='14'></circle>
-            <circle
-              fill='#5799f4'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='151.71428571428572'
-              id='13'></circle>
-            <circle
-              fill='#5695f5'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='153.82142857142858'
-              id='12'></circle>
-            <circle
-              fill='#5691f5'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='155.92857142857142'
-              id='11'></circle>
-            <circle
-              fill='#558df6'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='158.03571428571428'
-              id='10'></circle>
-            <circle
-              fill='#5489f7'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='160.14285714285714'
-              id='9'></circle>
-            <circle fill='#5485f7' fillOpacity='1' cx={pos.x + 25} cy={pos.y + 25} r='162.25' id='8'></circle>
-            <circle
-              fill='#5382f8'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='164.35714285714286'
-              id='7'></circle>
-            <circle
-              fill='#537ef8'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='166.46428571428572'
-              id='6'></circle>
-            <circle
-              fill='#527af9'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='168.57142857142858'
-              id='5'></circle>
-            <circle
-              fill='#5176fa'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='170.67857142857142'
-              id='4'></circle>
-            <circle
-              fill='#5172fa'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='172.78571428571428'
-              id='3'></circle>
-            <circle
-              fill='#506efb'
-              fillOpacity='1'
-              cx={pos.x + 25}
-              cy={pos.y + 25}
-              r='174.89285714285714'
-              id='2'></circle>
-            <circle fill='#506afb' fillOpacity='1' cx={pos.x + 25} cy={pos.y + 25} r='177' id='1'></circle>
+            <circle fill='#58a1f3' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30vh' id='15'></circle>
+            <circle fill='#579df4' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.1vh' id='14'></circle>
+            <circle fill='#5799f4' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.5vh' id='13'></circle>
+            <circle fill='#5695f5' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.8vh' id='12'></circle>
+            <circle fill='#5691f5' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.1vh' id='11'></circle>
+            <circle fill='#558df6' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.3vh' id='10'></circle>
+            <circle fill='#5489f7' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.6vh' id='9'></circle>
+            <circle fill='#5485f7' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.9vh' id='8'></circle>
+            <circle fill='#5382f8' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.2vh' id='7'></circle>
+            <circle fill='#537ef8' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.5vh' id='6'></circle>
+            <circle fill='#527af9' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.8vh' id='5'></circle>
+            <circle fill='#5176fa' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='33.1vh' id='4'></circle>
+            <circle fill='#5172fa' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='33.4vh' id='3'></circle>
+            <circle fill='#506efb' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='34.7vh' id='2'></circle>
+            <circle fill='#506afb' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='35h' id='1'></circle>
           </g>
         </svg>
       </div>

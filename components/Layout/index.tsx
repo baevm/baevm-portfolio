@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <CustomCursorManager>
       <CustomCursor />
       <div className={styles.background_noise} style={{ backgroundImage: "url('/noise-transparent.png')" }}></div>
-      <div>{children}</div>
+      <div className={styles.children}>{children}</div>
     </CustomCursorManager>
   )
 }

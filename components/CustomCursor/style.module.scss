@@ -167,4 +167,11 @@
 
 .particles {
   position: fixed;
+
+  height: calc(var(5.31px, 1vh) * 100);
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
