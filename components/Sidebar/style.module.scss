@@ -1,7 +1,28 @@
+@import './styles/variables.module.scss';
+
 .sidebar {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.sidebar__main {
+  width: 100%;
+}
+
+.sidebar__title {
+  font-size: $h6-size;
+}
+
+.sidebar__text {
+  font-family: spaceMono;
+  font-size: $secondary-text-size;
+}
+
+.sidebar__links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

@@ -62,7 +62,7 @@ const CustomCursor = () => {
     followMouse()
   }, [])
   return (
-    <div className={`${styles.cursor_wrapper} ${type}`}>
+    <div className={`cursor-wrapper ${type}`}>
       <div className={styles.main_cursor} ref={mainCursor}>
         <div className={styles.main_cursor_background}></div>
       </div>

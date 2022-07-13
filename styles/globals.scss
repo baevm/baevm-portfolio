@@ -16,10 +16,23 @@
   src: url('/fonts/PPMonumentExtended-Black.otf');
   font-display: swap;
 }
+@font-face {
+  font-family: 'spaceMono';
+  font-weight: 400;
+  src: url('/fonts/SpaceMono-Regular.ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'spaceMono';
+  font-weight: 700;
+  src: url('/fonts/SpaceMono-Bold.ttf');
+  font-display: swap;
+}
 
 html,
 body {
   font-family: monumentExtended, Verdana, sans-serif;
+  font-size: 62.5%;
 }
 
 a {
@@ -31,11 +44,15 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
+  cursor: none !important;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }
 
 *::-webkit-scrollbar {
   display: none;
+}
+
+#fp-nav {
+  z-index: 999999 !important;
 }

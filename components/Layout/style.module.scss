@@ -1,3 +1,5 @@
+@import './styles/variables.module.scss';
+
 // 'http://assets.iceable.com/img/noise-transparent.png'
 .background_noise {
   animation: bg-animation 0.5s steps(10) infinite;
@@ -12,12 +14,13 @@
   top: 0;
   transition: opacity 1s ease-out;
   width: 100vw;
-  z-index: 102;
+  z-index: 10000;
 }
 
 .children {
   position: absolute;
   z-index: 1000;
+  color: $primary-color;
 }
 
 @keyframes bg-animation {

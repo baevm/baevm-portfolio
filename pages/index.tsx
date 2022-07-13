@@ -1,16 +1,16 @@
 import type { NextPage } from 'next'
-import RightContent from '../components/RightContent'
-import Sidebar from '../components/Sidebar'
+import Content from '../components/Content/Content'
+import Sidebar from '../components/Sidebar/Sidebar'
 import styles from '../styles/Index.module.scss'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.sidebarContainer}>
+      <div className={styles.sidebar_container}>
         <Sidebar />
       </div>
-      <main className={styles.rightContentContainer}>
-        <RightContent />
+      <main className={styles.content_container}>
+        <Content />
       </main>
     </div>
   )
