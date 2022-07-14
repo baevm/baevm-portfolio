@@ -1,6 +1,5 @@
 // @ts-nocheck
 import React, { useContext } from 'react'
-import styles from './style.module.scss'
 import CustomCursorContext from './Context/CustomCursorContext'
 
 const CustomCursor = () => {
@@ -8,7 +7,6 @@ const CustomCursor = () => {
   const [pos, setPos] = React.useState({ x: 0, y: 0 })
   const secondaryCursor = React.useRef(null)
   const mainCursor = React.useRef(null)
-  const particles = React.useRef(null)
   const positionRef = React.useRef({
     mouseX: 0,
     mouseY: 0,
@@ -63,13 +61,13 @@ const CustomCursor = () => {
   }, [])
   return (
     <div className={`cursor-wrapper ${type}`}>
-      <div className={styles.main_cursor} ref={mainCursor}>
-        <div className={styles.main_cursor_background}></div>
+      <div className={'main_cursor'} ref={mainCursor}>
+        <div className={'main_cursor_background'}></div>
       </div>
-      <div className={styles.secondary_cursor} ref={secondaryCursor}>
-        <div className={styles.cursor_background}></div>
+      <div className={'secondary_cursor'} ref={secondaryCursor}>
+        <div className={'cursor_background'}></div>
       </div>
-      <div className={styles.particles}>
+      <div className={'particles'}>
         <svg width='100vw' height='100vh' viewBox='0 0 100vw 100vh'>
           <defs>
             <filter id='blur-particles' x='-50%' y='-50%' width='863.5%' height='863.5%'>
