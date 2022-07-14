@@ -1,19 +1,21 @@
-// @ts-nocheck
 import ReactFullPage from '@fullpage/react-fullpage'
 import Link from 'next/link'
-import { useContext } from 'react'
-import CustomCursorContext from '../CustomCursor/Context/CustomCursorContext'
+import { useAppContext } from '../../context/AppContext'
 import Buttons from './Buttons'
 import styles from './style.module.scss'
 
 const Content = () => {
-  const { setType } = useContext(CustomCursorContext)
-  
+  const { state, dispatch } = useAppContext()
+
+  const changeCursorType = (value: string) => {
+    return dispatch({ type: 'SET_CURSOR', payload: value })
+  }
+
   const anchors = ['', '', '']
   return (
     <div className={styles.content}>
       <ReactFullPage
-        licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
+        licenseKey='gplv3-license'
         scrollingSpeed={500}
         navigation
         credits={{ enabled: false }}
@@ -21,20 +23,25 @@ const Content = () => {
         navigationTooltips={anchors}
         render={() => (
           <ReactFullPage.Wrapper>
-          <Buttons />
+            <Buttons />
             <section className={`section ${styles.motion_container}`}>
               <h1
                 className={styles.content__title}
-                onMouseEnter={() => setType('hamburger')}
-                onMouseLeave={() => setType('default')}>
-                <Link href='/project/1'>
+                onMouseEnter={() => changeCursorType('hamburger')}
+                onMouseLeave={() => changeCursorType('default')}
+                onClick={() => changeCursorType('default')}>
+                <Link href='/projects'>
                   <a>projects</a>
                 </Link>
               </h1>
             </section>
 
             <section className={`section ${styles.motion_container}`}>
-              <h1 className={styles.content__title}>
+              <h1
+                className={styles.content__title}
+                onMouseEnter={() => changeCursorType('hamburger')}
+                onMouseLeave={() => changeCursorType('default')}
+                onClick={() => changeCursorType('default')}>
                 <Link href='/about'>
                   <a>about</a>
                 </Link>
@@ -42,7 +49,11 @@ const Content = () => {
             </section>
 
             <section className={`section ${styles.motion_container}`}>
-              <h1 className={styles.content__title}>
+              <h1
+                className={styles.content__title}
+                onMouseEnter={() => changeCursorType('hamburger')}
+                onMouseLeave={() => changeCursorType('default')}
+                onClick={() => changeCursorType('default')}>
                 <Link href='/contact'>
                   <a>contact</a>
                 </Link>

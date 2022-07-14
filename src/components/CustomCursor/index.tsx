@@ -1,9 +1,11 @@
 // @ts-nocheck
-import React, { useContext } from 'react'
-import CustomCursorContext from './Context/CustomCursorContext'
+import React from 'react'
+import { useAppContext } from '../../context/AppContext'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 const CustomCursor = () => {
-  const { type } = useContext(CustomCursorContext)
+  const { state, dispatch } = useAppContext()
+  const { height, width } = useWindowDimensions()
   const [pos, setPos] = React.useState({ x: 0, y: 0 })
   const secondaryCursor = React.useRef(null)
   const mainCursor = React.useRef(null)
@@ -60,7 +62,7 @@ const CustomCursor = () => {
     followMouse()
   }, [])
   return (
-    <div className={`cursor-wrapper ${type}`}>
+    <div className={`cursor-wrapper ${state.cursorType}`}>
       <div className={'main_cursor'} ref={mainCursor}>
         <div className={'main_cursor_background'}></div>
       </div>
@@ -68,7 +70,7 @@ const CustomCursor = () => {
         <div className={'cursor_background'}></div>
       </div>
       <div className={'particles'}>
-        <svg width='100vw' height='100vh' viewBox='0 0 100vw 100vh'>
+        <svg width='calc(100vw + 50px)' height='calc(100vh + 50px)' viewBox={`0 0 ${width + 50} ${height + 50}`}>
           <defs>
             <filter id='blur-particles' x='-50%' y='-50%' width='863.5%' height='863.5%'>
               <feGaussianBlur in='SourceGraphic' stdDeviation='50'></feGaussianBlur>
@@ -90,7 +92,7 @@ const CustomCursor = () => {
             <circle fill='#5176fa' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='33.1vh' id='4'></circle>
             <circle fill='#5172fa' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='33.4vh' id='3'></circle>
             <circle fill='#506efb' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='34.7vh' id='2'></circle>
-            <circle fill='#506afb' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='35h' id='1'></circle>
+            <circle fill='#506afb' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='35vh' id='1'></circle>
           </g>
         </svg>
       </div>

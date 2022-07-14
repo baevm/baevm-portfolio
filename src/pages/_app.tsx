@@ -18,3 +18,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp
+
+// TODO: loading animation
+// dark theme
+// tech skills
+// adaptive for mobile
+// projects page
+// about page
+// contact page
+// language switch
+// particles animations
+//
+// some optimizations
+

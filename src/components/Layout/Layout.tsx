@@ -1,16 +1,16 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { AppWrapper } from '../../context/AppContext'
 import CustomCursor from '../CustomCursor'
-import CustomCursorManager from '../CustomCursor/Context/manager'
 import styles from './style.module.scss'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
-    <CustomCursorManager>
+    <AppWrapper>
       <CustomCursor />
       <div className={styles.background_noise} style={{ backgroundImage: "url('/noise-transparent.png')" }}></div>
       <div className={styles.children}>{children}</div>
-    </CustomCursorManager>
+    </AppWrapper>
   )
 }
 
