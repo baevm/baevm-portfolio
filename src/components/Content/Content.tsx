@@ -1,11 +1,11 @@
 import ReactFullPage from '@fullpage/react-fullpage'
 import Link from 'next/link'
-import { useAppContext } from '../../context/AppContext'
+import { useDispatch } from 'react-redux'
 import Buttons from './Buttons'
 import styles from './style.module.scss'
 
 const Content = () => {
-  const { state, dispatch } = useAppContext()
+  const dispatch = useDispatch()
 
   const changeCursorType = (value: string) => {
     return dispatch({ type: 'SET_CURSOR', payload: value })

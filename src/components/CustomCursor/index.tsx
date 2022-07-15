@@ -1,26 +1,34 @@
 // @ts-nocheck
 import React from 'react'
-import { useAppContext } from '../../context/AppContext'
+import { useSelector } from 'react-redux'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 
+// Math.ceil(window.innerWidth / 2) - 50,
+// Math.ceil(window.innerHeight / 2) - 50,
+
 const CustomCursor = () => {
-  const { state, dispatch } = useAppContext()
   const { height, width } = useWindowDimensions()
-  const [pos, setPos] = React.useState({ x: 0, y: 0 })
+  const cursorType = useSelector((state: any) => state.app.cursorType)
   const secondaryCursor = React.useRef(null)
   const mainCursor = React.useRef(null)
+  const [pos, setPos] = React.useState({
+    x: null,
+    y: null,
+  })
+
   const positionRef = React.useRef({
-    mouseX: 0,
-    mouseY: 0,
-    destinationX: 0,
-    destinationY: 0,
-    distanceX: 0,
-    distanceY: 0,
+    mouseX: null,
+    mouseY: null,
+    destinationX: null,
+    destinationY: null,
+    distanceX: null,
+    distanceY: null,
     key: -1,
   })
 
   React.useEffect(() => {
-    document.addEventListener('mousemove', (event) => {
+  
+    const mouseMoveHandler = (event) => {
       const { clientX, clientY } = event
 
       const mouseX = clientX
@@ -30,13 +38,17 @@ const CustomCursor = () => {
       let calculatedY = mouseY - secondaryCursor.current.clientHeight / 2
       positionRef.current.mouseX = calculatedX
       positionRef.current.mouseY = calculatedY
+      
       setPos({ x: calculatedX, y: calculatedY })
       mainCursor.current.style.transform = `translate3d(${mouseX - mainCursor.current.clientWidth / 2}px, ${
         mouseY - mainCursor.current.clientHeight / 2
       }px, 0)`
-    })
+    }
+    document.addEventListener('mousemove', mouseMoveHandler)
 
-    return () => {}
+    return () => {
+      document.removeEventListener('mousemove', mouseMoveHandler)
+    }
   }, [])
 
   React.useEffect(() => {
@@ -61,8 +73,12 @@ const CustomCursor = () => {
     }
     followMouse()
   }, [])
+
+
+  // main cursor = inside dot
+  // secondary cursor = border
   return (
-    <div className={`cursor-wrapper ${state.cursorType}`}>
+    <div className={`cursor-wrapper ${cursorType}`}>
       <div className={'main_cursor'} ref={mainCursor}>
         <div className={'main_cursor_background'}></div>
       </div>

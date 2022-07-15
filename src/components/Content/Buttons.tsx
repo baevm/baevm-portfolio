@@ -1,12 +1,13 @@
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
-import { useAppContext } from '../../context/AppContext'
+import { useDispatch, useSelector } from 'react-redux'
 import { CHANGE_THEME, SET_CURSOR, SET_LANGUAGE } from '../../context/Reducer'
 import styles from './style.module.scss'
 
 const Buttons = () => {
-  const { state, dispatch } = useAppContext()
-  const language = state.language
-  const isDarkTheme = state.isDarkTheme
+  const dispatch = useDispatch()
+  const isDarkTheme = useSelector((state: any) => state.app.isDarkTheme)
+  const language = useSelector((state: any) => state.app.language)
+
 
   const handleChangeTheme = () => {
     return dispatch({ type: CHANGE_THEME })

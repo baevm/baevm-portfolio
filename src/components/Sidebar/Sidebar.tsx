@@ -1,9 +1,9 @@
 import { TbBrandGithub, TbBrandLinkedin, TbBrandTelegram } from 'react-icons/tb'
-import { useAppContext } from '../../context/AppContext'
+import { useDispatch } from 'react-redux'
 import styles from './style.module.scss'
 
 const Sidebar = () => {
-  const { state, dispatch } = useAppContext()
+  const dispatch = useDispatch()
 
   const changeCursorType = (value: string) => {
     return dispatch({ type: 'SET_CURSOR', payload: value })

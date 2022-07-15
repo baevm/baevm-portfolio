@@ -4,6 +4,8 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import styles from '../styles/Index.module.scss'
 
 const Home: NextPage = () => {
+ 
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.sidebar_container}>
