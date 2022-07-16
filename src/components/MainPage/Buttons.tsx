@@ -1,16 +1,16 @@
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
-import { CHANGE_THEME, SET_CURSOR, SET_LANGUAGE } from '../../context/Reducer'
+import { changeTheme, SET_CURSOR, SET_LANGUAGE } from '../../context/Reducer'
 import styles from './style.module.scss'
 
 const Buttons = () => {
   const dispatch = useDispatch()
-  const isDarkTheme = useSelector((state: any) => state.app.isDarkTheme)
+  const theme = useSelector((state: any) => state.app.theme)
   const language = useSelector((state: any) => state.app.language)
 
 
-  const handleChangeTheme = () => {
-    return dispatch({ type: CHANGE_THEME })
+  const handleChangeTheme = (theme: string) => {
+    return dispatch(changeTheme(theme))
   }
 
   const handleChangeLanguage = (lang: string) => {
@@ -21,13 +21,16 @@ const Buttons = () => {
     return dispatch({ type: SET_CURSOR, payload: type })
   }
 
+  console.log(theme)
+
+  
   return (
     <div className={styles.content__header}>
       <div>
         <span
           className={`${styles.content__header__chip}`}
           style={
-            language === 'en' ? { backgroundColor: '#18214e', color: 'white' } : { backgroundColor: '', color: '' }
+            language === 'en' ? { backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' } : { backgroundColor: '', color: '' }
           }
           onClick={() => handleChangeLanguage('en')}
           onMouseEnter={() => handleChangeCursor('hamburger')}
@@ -37,7 +40,7 @@ const Buttons = () => {
         <span
           className={styles.content__header__chip}
           style={
-            language === 'ru' ? { backgroundColor: '#18214e', color: 'white' } : { backgroundColor: '', color: '' }
+            language === 'ru' ? { backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' } : { backgroundColor: '', color: '' }
           }
           onClick={() => handleChangeLanguage('ru')}
           onMouseEnter={() => handleChangeCursor('hamburger')}
@@ -46,17 +49,17 @@ const Buttons = () => {
         </span>
       </div>
       <div>
-        {isDarkTheme ? (
+        {theme === 'dark' ? (
           <MdOutlineDarkMode
             fontSize='2.5rem'
-            onClick={() => handleChangeTheme()}
+            onClick={() => handleChangeTheme('light')}
             onMouseEnter={() => handleChangeCursor('hamburger')}
             onMouseLeave={() => handleChangeCursor('default')}
           />
         ) : (
           <MdOutlineLightMode
             fontSize='2.5rem'
-            onClick={() => handleChangeTheme()}
+            onClick={() => handleChangeTheme('dark')}
             onMouseEnter={() => handleChangeCursor('hamburger')}
             onMouseLeave={() => handleChangeCursor('default')}
           />

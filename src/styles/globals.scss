@@ -53,6 +53,26 @@ a {
   display: none;
 }
 
-#fp-nav {
-  z-index: 999999 !important;
+:root {
+  --primary-color: #18214e;
+  --cursor-color: #18214e;
+  --text-color: #fff;
+  --background-color: '';
 }
+
+[data-theme='dark'] {
+  --primary-color: #fff;
+  --cursor-color: #fff;
+  --text-color: #18214e;
+  --background-color: #151519;
+}
+
+::selection {
+  color: white;
+  text-shadow: 2px 2px 2px var(--primary-color);
+}
+
+// #fp-nav {
+//   z-index: 999999 !important;
+
+// }

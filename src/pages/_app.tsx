@@ -1,4 +1,4 @@
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -8,16 +8,30 @@ import Layout from '../components/Layout/Layout'
 import store from '../context/store'
 import '../styles/globals.scss'
 
+const variants = {
+  hidden: { opacity: 0, x: -1, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 1, y: 0 },
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
   return (
     <>
-      <Head>
-        <meta name='viewport' content='initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no' />
-      </Head>
       <Provider store={store}>
         <Layout>
-          <Component {...pageProps} key={router.asPath} />
+          <AnimatePresence>
+            <motion.div
+              variants={variants}
+              initial='hidden'
+              animate='enter'
+              exit='exit'
+              transition={{ type: 'linear' }}
+              key={router.asPath}
+              id='layoutId'>
+              <Component {...pageProps} />
+            </motion.div>
+          </AnimatePresence>
         </Layout>
       </Provider>
     </>
@@ -27,15 +41,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp
 
 // TODO: loading animation +
-// page switch animation
-// dark theme
+// page switch animation +
+// dark theme + (particles not showing on dark theme. ?why?) (dark theme flickering if its saved in localStorage)
 // tech skills
+// about page
 // adaptive for mobile
 // projects page
-// about page
 // contact page
 // language switch
 // particles animations
-// SEO
+// SEO +
 // fix cursor first renders at x: 0 y: 0
+// fix page jumping from the bottom when switching between pages
 // some optimizations

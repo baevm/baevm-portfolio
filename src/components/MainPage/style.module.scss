@@ -24,16 +24,15 @@
   border-radius: 50px;
 }
 
-.active {
-  background-color: $primary-color;
-  color: white;
-}
+
 
 .motion_container {
   height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+
+
 }
 
 .content__title {
@@ -41,13 +40,15 @@
   font-size: calc(clamp(3.05rem, 7vw, $h1-size));
   -webkit-text-stroke-width: 1px;
   letter-spacing: 0.01px;
+
+
 }
 
 .content__title a {
   -webkit-text-fill-color: white;
-  z-index: 999990;
+ 
 }
 
 .content__title a:hover {
-  -webkit-text-fill-color: $primary-color;
+  -webkit-text-fill-color: var(--primary-color);
 }
