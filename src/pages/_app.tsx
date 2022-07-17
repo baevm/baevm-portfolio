@@ -54,3 +54,4 @@ export default MyApp
 // fix cursor first renders at x: 0 y: 0
 // fix page jumping from the bottom when switching between pages
 // some optimizations
+// asdasdasdasdasdasd
