@@ -25,23 +25,26 @@ const Content = () => {
         </h1>
       </section>
 
-      <section className={`${styles.motion_container}`}>
+      <section className={`${styles.motion_container_left}`}>
         <h1
           className={styles.content__title}
           onMouseEnter={() => changeCursorType('hamburger')}
           onMouseLeave={() => changeCursorType('default')}>
           <a>about</a>
         </h1>
+        <div className={styles.content__skills}>
+          <h5>Hey, Im Mikhail, frontend developer</h5>
+        </div>
       </section>
 
-      <section className={`${styles.motion_container}`}>
+      <section className={`${styles.motion_container_left}`}>
         <h1
           className={styles.content__title}
           onMouseEnter={() => changeCursorType('hamburger')}
           onMouseLeave={() => changeCursorType('default')}>
-          <a>skills:</a>
+          <a>skills</a>
         </h1>
-        {/* <div className={styles.content__skills}>
+        <div className={styles.content__skills}>
           <h5>html</h5>
           <h5>css</h5>
           <h5>javascript</h5>
@@ -49,10 +52,10 @@ const Content = () => {
           <h5>react</h5>
           <h5>redux</h5>
           <h5>next.js</h5>
-        </div> */}
+        </div>
       </section>
 
-      {/* <section className={`${styles.motion_container_left}`}>
+      <section className={`${styles.motion_container_left}`}>
         <div className={styles.content__skills}>
           <h5>scss</h5>
           <h5>styled-components</h5>
@@ -62,7 +65,7 @@ const Content = () => {
           <h5>graphql</h5>
           <h5>git</h5>
         </div>
-      </section> */}
+      </section>
 
       <section className={`${styles.motion_container}`}>
         <h1
@@ -71,10 +74,10 @@ const Content = () => {
           onMouseLeave={() => changeCursorType('default')}>
           <a> message me:</a>
         </h1>
-        {/* <div className={styles.content__skills_right}>
+        <div className={styles.content__skills}>
           <h5>@telegram</h5>
           <h5>@linkedin</h5>
-        </div> */}
+        </div>
       </section>
     </div>
   )
