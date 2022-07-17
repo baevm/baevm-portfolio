@@ -1,14 +1,13 @@
 @import '../../styles/variables.module.scss';
 
 .sidebar {
-  height: 100%;
+  height: 100vh;
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  
 }
 
 .sidebar__main {
@@ -16,16 +15,23 @@
 }
 
 .sidebar__title {
-  font-size: $h6-size;
+  font-size: calc(clamp(1rem, 4vw, $h6-size));
 }
 
 .sidebar__text {
   font-family: spaceMono;
-  font-size: $secondary-text-size;
+  font-size: calc(clamp(1rem, 3vw, $secondary-text-size));
 }
 
 .sidebar__links {
-  width: 100%;
+  width: 50%;
+
   display: flex;
   justify-content: space-between;
+  align-self: flex-start;
+
+  @media (min-width: 1024px) {
+    width: 100%;
+    justify-content: space-between;
+  }
 }

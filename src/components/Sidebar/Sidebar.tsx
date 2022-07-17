@@ -13,8 +13,18 @@ const Sidebar = () => {
     <div className={styles.sidebar}>
       <div></div>
       <div className={styles.sidebar__main}>
-        <h3 className={styles.sidebar__title}>Mikhail Baev</h3>
-        <p className={styles.sidebar__text}>Frontend Developer</p>
+        <h3
+          className={styles.sidebar__title}
+          onMouseEnter={() => changeCursorType('hamburger')}
+          onMouseLeave={() => changeCursorType('default')}>
+          Mikhail Baev
+        </h3>
+        <p
+          className={styles.sidebar__text}
+          onMouseEnter={() => changeCursorType('hamburger')}
+          onMouseLeave={() => changeCursorType('default')}>
+          Frontend Developer
+        </p>
       </div>
       <div className={styles.sidebar__links}>
         <a

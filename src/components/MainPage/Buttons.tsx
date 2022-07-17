@@ -26,7 +26,7 @@ const Buttons = () => {
   
   return (
     <div className={styles.content__header}>
-      <div>
+      {/* <div>
         <span
           className={`${styles.content__header__chip}`}
           style={
@@ -47,7 +47,7 @@ const Buttons = () => {
           onMouseLeave={() => handleChangeCursor('default')}>
           RU
         </span>
-      </div>
+      </div> */}
       <div>
         {theme === 'dark' ? (
           <MdOutlineDarkMode

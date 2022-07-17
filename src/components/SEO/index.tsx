@@ -13,7 +13,7 @@ const SEO = ({ title, siteName }: Props) => {
 
   return (
     <Head>
-      <meta name='viewport' content='initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no' />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <title key='title'>{`${title}${siteName ? ' | ' + siteName : ''}`}</title>
       <meta name='description' content={"Hey, I'm Mikhail, frontend developer passionate about web development."} />
       <meta key='og_type' property='og:type' content='website' />

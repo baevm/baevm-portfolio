@@ -72,7 +72,11 @@ a {
   text-shadow: 2px 2px 2px var(--primary-color);
 }
 
-// #fp-nav {
-//   z-index: 999999 !important;
+#fp-nav {
+  visibility: hidden;
 
-// }
+  @media (min-width: 1024px) {
+    visibility: visible;
+  }
+}
+
