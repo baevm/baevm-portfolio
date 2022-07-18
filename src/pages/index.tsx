@@ -14,19 +14,12 @@ const Home: NextPage = () => {
   return (
     <>
       <SEO title='Mikhail Baev' siteName='Frontend Developer' />
-      <LocomotiveScrollProvider
-        options={{ smooth: true, lerp: 0.05 }}
-        containerRef={containerRef}
-        watch={[]}
-        location={asPath}>
-        <div className={`${styles.wrapper}`}>
-          <Buttons />
-          <main className={styles.content_container}>
-            <Content />
-          </main>
-          {/* <FloatingButton /> */}
-        </div>
-      </LocomotiveScrollProvider>
+      <div className={`${styles.wrapper}`}>
+        <Buttons />
+        <main className={styles.content_container}>
+          <Content type='index' />
+        </main>
+      </div>
     </>
   )
 }

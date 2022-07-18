@@ -43,7 +43,7 @@ export default MyApp
 
 // TODO: loading animation +
 // page switch animation +
-// dark theme + 
+// dark theme +
 // SEO +
 // adaptive for mobile +
 // tech skills
