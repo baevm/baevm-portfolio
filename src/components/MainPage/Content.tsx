@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
+import FloatingButton from '../FloatingButton/FloatingButton'
 import Sidebar from '../Sidebar/Sidebar'
 import styles from './style.module.scss'
 
@@ -11,11 +12,16 @@ const Content = () => {
   }
 
   return (
-    <div className={styles.content} data-scroll-container id='sidebarContainer'>
-      <div className={styles.sidebar_container} data-scroll data-scroll-sticky data-scroll-target='#scrollContainer'>
+    <div className={styles.content} data-scroll-section>
+      <div
+        className={styles.sidebar_container}
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target='#scrollContainer' /*    */
+      >
         <Sidebar />
       </div>
-      <div className={styles.content_container} id='scrollContainer' >
+      <div className={styles.content_container} data-scroll-container id='scrollContainer'>
         <section className={`${styles.motion_container}`}>
           <h1
             className={styles.content__title}
