@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import { useRef } from 'react'
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { useDispatch } from 'react-redux'
 import Sidebar from '../Sidebar/Sidebar'
 import styles from './style.module.scss'
@@ -13,11 +11,11 @@ const Content = () => {
   }
 
   return (
-    <div className={styles.content} data-scroll-container>
-      <div className={styles.sidebar_container} data-scroll data-scroll-sticky data-scroll-target='#testtest'>
+    <div className={styles.content} data-scroll-container id='sidebarContainer'>
+      <div className={styles.sidebar_container} data-scroll data-scroll-sticky data-scroll-target='#scrollContainer'>
         <Sidebar />
       </div>
-      <div className={styles.content_container} id='testtest'>
+      <div className={styles.content_container} id='scrollContainer' >
         <section className={`${styles.motion_container}`}>
           <h1
             className={styles.content__title}

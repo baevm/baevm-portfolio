@@ -43,15 +43,13 @@ export default MyApp
 // TODO: loading animation +
 // page switch animation +
 // dark theme + (particles not showing on dark theme. ?why?) (dark theme flickering if its saved in localStorage)
+// SEO +
+// adaptive for mobile +
 // tech skills
-// about page
-// adaptive for mobile
 // projects page
-// contact page
 // language switch
 // particles animations
-// SEO +
 // fix cursor first renders at x: 0 y: 0
 // fix page jumping from the bottom when switching between pages
 // some optimizations
-// asdasdasdasdasdasd
+// 
