@@ -71,12 +71,3 @@ a {
   color: white;
   text-shadow: 2px 2px 2px var(--primary-color);
 }
-
-#fp-nav {
-  visibility: hidden;
-
-  @media (min-width: 1024px) {
-    visibility: visible;
-  }
-}
-

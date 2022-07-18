@@ -41,16 +41,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 export default MyApp
 
-// TODO: loading animation +
+// TODO: 
+// loading animation +
 // page switch animation +
 // dark theme +
 // SEO +
 // adaptive for mobile +
 // tech skills
 // projects page
+// footer
 // language switch
 // particles animations
-// FIXME: floating to top button moves to top but scrollbar somehow stays at the bottom and bugs whole locomotive scrolling (???)
+// buttons animations +
+// FIXME: 
+// floating to top button moves to top but scrollbar somehow stays at the bottom and bugs whole locomotive scrolling (???)
 // particles not showing on dark theme. ?why? (dark theme flickering if its saved in localStorage)
 // fix cursor first renders at x: 0 y: 0
 // some optimizations

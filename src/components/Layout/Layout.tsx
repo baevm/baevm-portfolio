@@ -18,8 +18,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     dispatch(changeTheme(storageTheme))
     setTimeout(() => {
       dispatch(hideLoading())
-    }, 100)
-  }, [])
+    }, 1000)
+  })
 
   return (
     <div data-theme={theme}>

@@ -8,9 +8,10 @@ import styles from './style.module.scss'
 
 type Props = {
   type: 'index' | 'projects'
+  projects?: []
 }
 
-const Content = ({ type }: Props) => {
+const Content = ({ type, projects }: Props) => {
   const dispatch = useDispatch()
   const containerRef = useRef(null)
   const changeCursorType = (value: string) => {
@@ -23,12 +24,7 @@ const Content = ({ type }: Props) => {
       containerRef={containerRef}
       watch={[]}>
       <div className={styles.content} data-scroll-container ref={containerRef}>
-        <div
-          className={styles.sidebar_container}
-          data-scroll
-          data-scroll-sticky
-          data-scroll-target='#scrollContainer'
-        >
+        <div className={styles.sidebar_container} data-scroll data-scroll-sticky data-scroll-target='#scrollContainer'>
           <Sidebar />
         </div>
         <div className={styles.content_container} id='scrollContainer'>
@@ -103,14 +99,17 @@ const Content = ({ type }: Props) => {
             </>
           ) : (
             <>
-            <section className={`${styles.motion_container}`}>
-              <h1
-                className={styles.content__title}
-                onMouseEnter={() => changeCursorType('hamburger')}
-                onMouseLeave={() => changeCursorType('default')}>
-                portfolio
-              </h1>
-            </section>
+              {projects &&
+                projects.map((project: any) => (
+                  <section className={`${styles.motion_container}`} key={project.id}>
+                    <h1
+                      className={styles.content__title}
+                      onMouseEnter={() => changeCursorType('hamburger')}
+                      onMouseLeave={() => changeCursorType('default')}>
+                      {project.title}
+                    </h1>
+                  </section>
+                ))}
             </>
           )}
         </div>
