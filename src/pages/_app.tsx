@@ -1,12 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import type { AppProps } from 'next/app'
-import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
 import '../components/CustomCursor/style.scss' // styles for cursor cause .module not working properly
 import Layout from '../components/Layout/Layout'
 import store from '../context/store'
 import '../styles/globals.scss'
+import '../styles/locomotive-scroll.scss'
 
 const variants = {
   hidden: { opacity: 0, x: -1, y: 0 },
@@ -54,3 +54,4 @@ export default MyApp
 // fix cursor first renders at x: 0 y: 0
 // fix page jumping from the bottom when switching between pages
 // some optimizations
+// asdasdasdasdasdasd
