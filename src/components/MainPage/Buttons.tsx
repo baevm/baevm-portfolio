@@ -8,7 +8,6 @@ const Buttons = () => {
   const theme = useSelector((state: any) => state.app.theme)
   const language = useSelector((state: any) => state.app.language)
 
-
   const handleChangeTheme = (theme: string) => {
     return dispatch(changeTheme(theme))
   }
@@ -23,7 +22,6 @@ const Buttons = () => {
 
   console.log(theme)
 
-  
   return (
     <div className={styles.content__header}>
       {/* <div>
