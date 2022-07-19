@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 export default MyApp
 
-// TODO: 
+// TODO:
 // loading animation +
 // page switch animation +
 // dark theme +
@@ -53,9 +53,10 @@ export default MyApp
 // language switch
 // particles animations
 // buttons animations +
-// FIXME: 
+// FIXME:
 // floating to top button moves to top but scrollbar somehow stays at the bottom and bugs whole locomotive scrolling (???)
-// particles not showing on dark theme. ?why? (dark theme flickering if its saved in localStorage)
+// particles not showing on dark theme. +
+// dark theme flickering +
 // fix cursor first renders at x: 0 y: 0
 // some optimizations
 //

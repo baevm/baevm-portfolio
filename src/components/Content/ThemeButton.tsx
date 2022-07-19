@@ -1,7 +1,9 @@
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeTheme, SET_CURSOR, SET_LANGUAGE } from '../../context/Reducer'
+import { SET_CURSOR, SET_LANGUAGE } from '../../context/Reducer'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import { useTheme } from '../../hooks/useTheme'
 
 const ThemeButton = () => {
   const variants = {
@@ -10,16 +12,12 @@ const ThemeButton = () => {
     exit: { x: 0, y: 40, opacity: 0 },
   }
   const dispatch = useDispatch()
-  const theme = useSelector((state: any) => state.app.theme)
-  
-
-  const handleChangeTheme = (theme: string) => {
-    return dispatch(changeTheme(theme))
-  }
+  const {theme, changeTheme} = useTheme()
 
   const handleChangeCursor = (type: string) => {
     return dispatch({ type: SET_CURSOR, payload: type })
   }
+  
   return (
     <AnimatePresence exitBeforeEnter>
       {theme === 'dark' ? (
@@ -32,7 +30,7 @@ const ThemeButton = () => {
           key={theme}>
           <MdOutlineDarkMode
             fontSize='2.5rem'
-            onClick={() => handleChangeTheme('light')}
+            onClick={() => changeTheme('light')}
             onMouseEnter={() => handleChangeCursor('hamburger')}
             onMouseLeave={() => handleChangeCursor('default')}
           />
@@ -47,7 +45,7 @@ const ThemeButton = () => {
           key={theme}>
           <MdOutlineLightMode
             fontSize='2.5rem'
-            onClick={() => handleChangeTheme('dark')}
+            onClick={() => changeTheme('dark')}
             onMouseEnter={() => handleChangeCursor('hamburger')}
             onMouseLeave={() => handleChangeCursor('default')}
           />
