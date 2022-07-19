@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { useRef } from 'react'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { useDispatch } from 'react-redux'
-import FloatingButton from '../FloatingButton/FloatingButton'
+import { colors } from '../../consts'
+import { setCursorType, setParticlesColor } from '../../context/Reducer'
 import Sidebar from '../Sidebar/Sidebar'
 import styles from './style.module.scss'
 
@@ -14,10 +15,21 @@ type Props = {
 const Content = ({ type, projects }: Props) => {
   const dispatch = useDispatch()
   const containerRef = useRef(null)
-  const changeCursorType = (value: string) => {
-    return dispatch({ type: 'SET_CURSOR', payload: value })
+
+  const changeParticlesColor = (particlesColor: string) => {
+    return dispatch(setParticlesColor(particlesColor))
   }
 
+  const changeCursorType = (value: string) => {
+    return dispatch(setCursorType(value))
+  }
+
+  const changeCursorAndParticles = (cursorType: string, particlesColor: string) => {
+    changeParticlesColor(particlesColor)
+    changeCursorType(cursorType)
+  }
+
+  // onMouseEnter={() => changeParticlesColor(colors.pink)}
   return (
     <LocomotiveScrollProvider
       options={{ smooth: true, lerp: 0.05, tablet: { smooth: true }, smartphone: { smooth: true } }}
@@ -33,7 +45,7 @@ const Content = ({ type, projects }: Props) => {
               <section className={`${styles.motion_container}`}>
                 <h1
                   className={styles.content__title}
-                  onMouseEnter={() => changeCursorType('hamburger')}
+                  onMouseEnter={() => changeCursorAndParticles('hamburger', colors.red)}
                   onMouseLeave={() => changeCursorType('default')}
                   onClick={() => changeCursorType('default')}>
                   <Link href='/projects'>
@@ -43,25 +55,15 @@ const Content = ({ type, projects }: Props) => {
               </section>
 
               <section className={`${styles.motion_container_left}`}>
-                <h1
-                  className={styles.content__title}
-                  onMouseEnter={() => changeCursorType('hamburger')}
-                  onMouseLeave={() => changeCursorType('default')}>
-                  <a>about</a>
-                </h1>
-                <div className={styles.content__skills}>
+                <h1 className={styles.content__title}>about</h1>
+                <div className={styles.content__text}>
                   <h5>Hey, Im Mikhail, frontend developer</h5>
                 </div>
               </section>
 
               <section className={`${styles.motion_container_left}`}>
-                <h1
-                  className={styles.content__title}
-                  onMouseEnter={() => changeCursorType('hamburger')}
-                  onMouseLeave={() => changeCursorType('default')}>
-                  <a>skills</a>
-                </h1>
-                <div className={styles.content__skills}>
+                <h1 className={styles.content__title}>skills</h1>
+                <div className={styles.content__text}>
                   <h5>html</h5>
                   <h5>css</h5>
                   <h5>javascript</h5>
@@ -73,7 +75,7 @@ const Content = ({ type, projects }: Props) => {
               </section>
 
               <section className={`${styles.motion_container_left}`}>
-                <div className={styles.content__skills}>
+                <div className={styles.content__text}>
                   <h5>scss</h5>
                   <h5>styled-components</h5>
                   <h5>prisma</h5>
@@ -85,26 +87,29 @@ const Content = ({ type, projects }: Props) => {
               </section>
 
               <section className={`${styles.motion_container}`}>
-                <h1
-                  className={styles.content__title}
-                  onMouseEnter={() => changeCursorType('hamburger')}
-                  onMouseLeave={() => changeCursorType('default')}>
-                  <a> message me:</a>
-                </h1>
-                <div className={styles.content__skills}>
-                  <h5>@telegram</h5>
-                  <h5>@linkedin</h5>
+                <h1 className={styles.content__title}>message me:</h1>
+                <div className={styles.content__links}>
+                  <h5
+                    onMouseEnter={() => changeCursorType('hamburger')}
+                    onMouseLeave={() => changeCursorType('default')}>
+                    <a href='mailto:dezzerlul@gmail.com'>dezzerlul@gmail.com</a>
+                  </h5>
+                  <h5
+                    onMouseEnter={() => changeCursorType('hamburger')}
+                    onMouseLeave={() => changeCursorType('default')}>
+                    <a href='https://t.me/dezzerlol'>@dezzerlol</a>
+                  </h5>
                 </div>
               </section>
             </>
           ) : (
             <>
               {projects &&
-                projects.map((project: any) => (
+                projects.map((project: any, index) => (
                   <section className={`${styles.motion_container}`} key={project.id}>
                     <h1
                       className={styles.content__title}
-                      onMouseEnter={() => changeCursorType('hamburger')}
+                      onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(colors)[index])}
                       onMouseLeave={() => changeCursorType('default')}>
                       {project.title}
                     </h1>

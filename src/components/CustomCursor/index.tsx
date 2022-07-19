@@ -3,11 +3,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 
-// Math.ceil(window.innerWidth / 2) - 50,
-// Math.ceil(window.innerHeight / 2) - 50,
-
 const CustomCursor = () => {
   const { height, width } = useWindowDimensions()
+  const particlesColor = useSelector((state: any) => state.app.particlesColor)
   const cursorType = useSelector((state: any) => state.app.cursorType)
   const secondaryCursor = React.useRef(null)
   const mainCursor = React.useRef(null)
@@ -76,45 +74,41 @@ const CustomCursor = () => {
   // main cursor = inside dot
   // secondary cursor = border
   return (
-
-      <div className={`cursor-wrapper ${cursorType}`}>
-        <div className={'main_cursor'} ref={mainCursor}>
-          <div className={'main_cursor_background'}></div>
-        </div>
-        <div className={'secondary_cursor'} ref={secondaryCursor}>
-          <div className={'cursor_background'}></div>
-        </div>
-     <div className={'particles'}>
-          <svg width='calc(100vw + 50px)' height='calc(100vh + 50px)' viewBox={`0 0 ${width + 50} ${height + 50}`}>
-            <defs>
-              <filter id='blur-particles' x='-50%' y='-50%' width='863.5%' height='863.5%'>
-                <feGaussianBlur in='SourceGraphic' stdDeviation='50'></feGaussianBlur>
-              </filter>
-            </defs>
-            <g filter='url(#blur-particles)' transform='scale(1)' transform-origin={`${pos.x} ${pos.y}`}>
-              <rect fill='none' width='1777' height='581' y='0' x='0'></rect>
-              <circle fill='#58a1f3' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30vh' id='15'></circle>
-              <circle fill='#579df4' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.1vh' id='14'></circle>
-              <circle fill='#5799f4' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.5vh' id='13'></circle>
-              <circle fill='#5695f5' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.8vh' id='12'></circle>
-              <circle fill='#5691f5' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.1vh' id='11'></circle>
-              <circle fill='#558df6' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.3vh' id='10'></circle>
-              <circle fill='#5489f7' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.6vh' id='9'></circle>
-              <circle fill='#5485f7' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.9vh' id='8'></circle>
-              <circle fill='#5382f8' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.2vh' id='7'></circle>
-              <circle fill='#537ef8' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.5vh' id='6'></circle>
-              <circle fill='#527af9' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.8vh' id='5'></circle>
-              <circle fill='#5176fa' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='33.1vh' id='4'></circle>
-              <circle fill='#5172fa' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='33.4vh' id='3'></circle>
-              <circle fill='#506efb' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='34.7vh' id='2'></circle>
-              <circle fill='#506afb' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='35vh' id='1'></circle>
-            </g>
-          </svg>
-        </div>
-    
-       
+    <div className={`cursor-wrapper ${cursorType}`}>
+      <div className={'main_cursor'} ref={mainCursor}>
+        <div className={'main_cursor_background'}></div>
       </div>
-
+      <div className={'secondary_cursor'} ref={secondaryCursor}>
+        <div className={'cursor_background'}></div>
+      </div>
+      <div className={'particles'}>
+        <svg width='calc(100vw + 50px)' height='calc(100vh + 50px)' viewBox={`0 0 ${width + 50} ${height + 50}`}>
+          <defs>
+            <filter id='blur-particles' x='-50%' y='-50%' width='863.5%' height='863.5%'>
+              <feGaussianBlur in='SourceGraphic' stdDeviation='50'></feGaussianBlur>
+            </filter>
+          </defs>
+          <g filter='url(#blur-particles)' transform='scale(1)' transform-origin={`${pos.x} ${pos.y}`}>
+            <rect fill='none' width='1777' height='581' y='0' x='0'></rect>
+            <circle fill='#58a1f3' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30vh' id='15'></circle>
+            <circle fill='#579df4' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.1vh' id='14'></circle>
+            <circle fill='#5799f4' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.5vh' id='13'></circle>
+            <circle fill='#5695f5' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.8vh' id='12'></circle>
+            <circle fill='#5691f5' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.1vh' id='11'></circle>
+            <circle fill='#558df6' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.3vh' id='10'></circle>
+            <circle fill='#5489f7' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.6vh' id='9'></circle>
+            <circle fill='#5485f7' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='31.9vh' id='8'></circle>
+            <circle fill='#5382f8' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.2vh' id='7'></circle>
+            <circle fill='#537ef8' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.5vh' id='6'></circle>
+            <circle fill='#527af9' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='32.8vh' id='5'></circle>
+            <circle fill='#5176fa' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='33.1vh' id='4'></circle>
+            <circle fill='#5172fa' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='33.4vh' id='3'></circle>
+            <circle fill='#506efb' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='34.7vh' id='2'></circle>
+            <circle fill={particlesColor} fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='35vh' id='1'></circle>
+          </g>
+        </svg>
+      </div>
+    </div>
   )
 }
 

@@ -14,7 +14,6 @@
   width: 100%;
   min-width: 100%;
   height: 100%;
-
   @media (min-width: 1024px) {
     width: 20%;
     min-width: 20%;
@@ -25,6 +24,7 @@
 .content_container {
   width: 100%;
   height: 100%;
+  padding-right: 2rem;
 
   @media (min-width: 1024px) {
     width: 100%;
@@ -79,12 +79,19 @@
 
 .content__title a {
   -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
 }
 
 .content__title a:hover {
   -webkit-text-fill-color: var(--primary-color);
 }
 
-.content__skills {
+.content__text {
   font-size: calc(clamp(3.05rem, 7vw, $h1-size));
+  text-transform: uppercase;
+}
+
+.content__links {
+  font-size: calc(clamp(3.05rem, 7vw, $h5-size));
+  text-align: end;
 }

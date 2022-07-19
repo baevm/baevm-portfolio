@@ -13,17 +13,16 @@ type ACTIONTYPE =
   | { type: 'SET_CURSOR'; payload: string }
   | { type: 'SET_LANGUAGE'; payload: string }
 
-
 export const SET_CURSOR = 'SET_CURSOR'
 export const SET_LANGUAGE = 'SET_LANGUAGE'
 export const SET_LOADING = 'SET_LOADING'
-
+export const SET_PARTICLES_COLOR = 'SET_PARTICLES_COLOR'
 
 const initialState = {
   isLoading: true,
   language: 'en',
   cursorType: 'default',
-  particlesColor: '',
+  particlesColor: '#506afb',
 }
 
 const Reducer = (state = initialState, action: any) => {
@@ -48,6 +47,13 @@ const Reducer = (state = initialState, action: any) => {
       }
     }
 
+    case SET_PARTICLES_COLOR: {
+      return {
+        ...state,
+        particlesColor: action.payload,
+      }
+    }
+
     default: {
       return state
     }
@@ -68,5 +74,18 @@ export const hideLoading = () => {
   }
 }
 
+export const setCursorType = (type: string) => {
+  return {
+    type: SET_CURSOR,
+    payload: type,
+  }
+}
+
+export const setParticlesColor = (color: string) => {
+  return {
+    type: SET_PARTICLES_COLOR,
+    payload: color,
+  }
+}
 
 export default Reducer
