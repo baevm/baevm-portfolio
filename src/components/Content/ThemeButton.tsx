@@ -1,9 +1,8 @@
-import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
-import { useDispatch, useSelector } from 'react-redux'
-import { SET_CURSOR, SET_LANGUAGE } from '../../context/Reducer'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
+import { useDispatch } from 'react-redux'
 import { useTheme } from '../../hooks/useTheme'
+import { setCursorType } from '../../redux/Reducer'
 
 const ThemeButton = () => {
   const variants = {
@@ -12,12 +11,12 @@ const ThemeButton = () => {
     exit: { x: 0, y: 40, opacity: 0 },
   }
   const dispatch = useDispatch()
-  const {theme, changeTheme} = useTheme()
+  const { theme, changeTheme } = useTheme()
 
   const handleChangeCursor = (type: string) => {
-    return dispatch({ type: SET_CURSOR, payload: type })
+    return dispatch(setCursorType(type))
   }
-  
+
   return (
     <AnimatePresence exitBeforeEnter>
       {theme === 'dark' ? (

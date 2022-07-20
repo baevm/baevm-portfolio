@@ -1,5 +1,6 @@
 import { TbBrandGithub, TbBrandLinkedin, TbBrandTelegram } from 'react-icons/tb'
 import { useDispatch } from 'react-redux'
+import FloatingButton from '../FloatingButton/FloatingButton'
 import styles from './style.module.scss'
 
 const Sidebar = () => {
@@ -52,6 +53,7 @@ const Sidebar = () => {
           <TbBrandLinkedin fontSize='2.441rem' />
         </a>
       </div>
+      <FloatingButton />
     </div>
   )
 }

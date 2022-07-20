@@ -11,10 +11,18 @@ export const getProjectsList = async () => {
       projects {
         id
         title
+        githubLink
+        tech
+        gif {
+          url
+        }
+        description {
+          raw
+        }
       }
     }
   `
-   
+
   const results = await graphcms.request(query)
 
   return results.projects

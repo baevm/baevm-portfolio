@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
 import '../components/CustomCursor/style.scss' // styles for cursor because .module not working properly
 import Layout from '../components/Layout/Layout'
-import store from '../context/store'
+import store from '../redux/store'
 import '../styles/globals.scss'
 import '../styles/locomotive-scroll.scss'
 
@@ -47,8 +47,8 @@ export default MyApp
 // dark theme +
 // SEO +
 // adaptive for mobile +
-// tech skills
-// projects page
+// tech skills +
+// projects page + 
 // footer
 // language switch
 // particles animations
