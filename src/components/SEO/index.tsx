@@ -13,7 +13,7 @@ const SEO = ({ title, siteName }: Props) => {
 
   return (
     <Head>
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <meta name='viewport' content='width=device-width,initial-scale=1' />
       <title key='title'>{`${title}${siteName ? ' | ' + siteName : ''}`}</title>
       <meta name='description' content={"Hey, I'm Mikhail, frontend developer passionate about web development."} />
       <meta key='og_type' property='og:type' content='website' />
@@ -31,7 +31,8 @@ const SEO = ({ title, siteName }: Props) => {
 
       <meta name='robots' content='index,follow' />
 
-      <link rel='shortcut icon' href='/favicon.ico' />
+      <link rel='apple-touch-icon' sizes='180x180' href='/apple_touch_icon.png' />
+      <link rel='icon' type='image/png' href='/favicon.png' sizes='32x32' />
     </Head>
   )
 }

@@ -20,7 +20,7 @@
 
 .sidebar__text {
   font-family: spaceMono;
-  font-size: calc(clamp(1rem, 3vw, $secondary-text-size));
+  font-size: calc(clamp(1rem, 3vw, $md-text-size));
 }
 
 .sidebar__links {

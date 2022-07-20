@@ -13,28 +13,20 @@ type ACTIONTYPE =
   | { type: 'SET_CURSOR'; payload: string }
   | { type: 'SET_LANGUAGE'; payload: string }
 
-export const CHANGE_THEME = 'CHANGE_THEME'
 export const SET_CURSOR = 'SET_CURSOR'
 export const SET_LANGUAGE = 'SET_LANGUAGE'
 export const SET_LOADING = 'SET_LOADING'
-
+export const SET_PARTICLES_COLOR = 'SET_PARTICLES_COLOR'
 
 const initialState = {
   isLoading: true,
-  theme: 'light',
   language: 'en',
   cursorType: 'default',
-  particlesColor: '',
+  particlesColor: '#506afb',
 }
 
 const Reducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case CHANGE_THEME: {
-      return {
-        ...state,
-        theme: action.payload
-      }
-    }
     case SET_LANGUAGE: {
       return {
         ...state,
@@ -52,6 +44,13 @@ const Reducer = (state = initialState, action: any) => {
       return {
         ...state,
         isLoading: action.payload,
+      }
+    }
+
+    case SET_PARTICLES_COLOR: {
+      return {
+        ...state,
+        particlesColor: action.payload,
       }
     }
 
@@ -75,11 +74,17 @@ export const hideLoading = () => {
   }
 }
 
-export const changeTheme = (value: any) => {
-  localStorage.setItem('theme', value)
-
+export const setCursorType = (type: string) => {
   return {
-    type: 'CHANGE_THEME', payload: value
+    type: SET_CURSOR,
+    payload: type,
+  }
+}
+
+export const setParticlesColor = (color: string) => {
+  return {
+    type: SET_PARTICLES_COLOR,
+    payload: color,
   }
 }
 
