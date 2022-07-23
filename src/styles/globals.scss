@@ -74,3 +74,38 @@ a {
   color: white;
   text-shadow: 2px 2px 2px var(--primary-color);
 }
+
+.has-scroll-scrolling {
+  .particles g {
+    @media (max-width: 767px) {
+      animation: transformer 0.2s ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+html:not(.has-scroll-scrolling) {
+  .particles g {
+    @media (max-width: 767px) {
+      animation: transformerDown 0.2s ease-out;
+    }
+  }
+}
+
+@keyframes transformer {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes transformerDown {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(0);
+  }
+}

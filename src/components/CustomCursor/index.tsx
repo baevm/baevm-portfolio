@@ -88,7 +88,11 @@ const CustomCursor = () => {
               <feGaussianBlur in='SourceGraphic' stdDeviation='50'></feGaussianBlur>
             </filter>
           </defs>
-          <g filter='url(#blur-particles)' transform='scale(1)' transform-origin={`${pos.x} ${pos.y}`}>
+
+          <g
+            filter='url(#blur-particles)'
+            /* transform='scale(1)' */
+            transform-origin={`${pos.x} ${pos.y}`}>
             <rect fill='none' width='1777' height='581' y='0' x='0'></rect>
             <circle fill='#58a1f3' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30vh' id='15'></circle>
             <circle fill='#579df4' fillOpacity='1' cx={pos.x + 40} cy={pos.y + 50} r='30.1vh' id='14'></circle>

@@ -53,7 +53,7 @@ export default MyApp
 // adaptive for mobile +
 // tech skills +
 // projects page +
-// footer
+// footer +
 // language switch
 // particles animations
 // buttons animations +
