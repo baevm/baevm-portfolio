@@ -25,12 +25,13 @@
 
 .sidebar__links {
   width: 50%;
-
+  margin-bottom: 3rem;
   display: flex;
   justify-content: space-between;
   align-self: flex-start;
 
   @media (min-width: 1024px) {
+    margin: 0;
     width: 100%;
     justify-content: space-between;
   }

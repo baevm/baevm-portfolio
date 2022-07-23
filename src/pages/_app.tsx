@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
 import '../components/CustomCursor/style.scss' // styles for cursor because .module not working properly
@@ -19,6 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <link rel='icon' type='image/png' href='/favicon.png' sizes='32x32' />
+      </Head>
       <Provider store={store}>
         <Layout>
           <AnimatePresence exitBeforeEnter>
@@ -48,7 +52,7 @@ export default MyApp
 // SEO +
 // adaptive for mobile +
 // tech skills +
-// projects page + 
+// projects page +
 // footer
 // language switch
 // particles animations
@@ -59,4 +63,4 @@ export default MyApp
 // dark theme flickering +
 // fix cursor first renders at x: 0 y: 0
 // some optimizations
-//
+// change favicon pos

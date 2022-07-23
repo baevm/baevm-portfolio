@@ -32,7 +32,7 @@ const SEO = ({ title, siteName }: Props) => {
       <meta name='robots' content='index,follow' />
 
       <link rel='apple-touch-icon' sizes='180x180' href='/apple_touch_icon.png' />
-      <link rel='icon' type='image/png' href='/favicon.png' sizes='32x32' />
+      
     </Head>
   )
 }

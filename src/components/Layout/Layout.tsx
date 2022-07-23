@@ -18,9 +18,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     //dispatch(showLoading())
   })
 
-  console.log(isLoading)
-
-  
 
   return (
     <div>

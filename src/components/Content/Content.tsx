@@ -31,12 +31,16 @@ const Content = ({ type, projects }: Props) => {
     changeCursorType(cursorType)
   }
 
-  console.log(projects)
-
   // onMouseEnter={() => changeParticlesColor(colors.pink)}
   return (
     <LocomotiveScrollProvider
-      options={{ smooth: true, lerp: 0.05, tablet: { smooth: true }, smartphone: { smooth: true } }}
+      options={{
+        smooth: true,
+        lerp: 0.05,
+        touchMultiplier: 4,
+        tablet: { smooth: true },
+        smartphone: { smooth: true },
+      }}
       containerRef={containerRef}
       watch={[]}>
       <div className={styles.content} data-scroll-container ref={containerRef}>
