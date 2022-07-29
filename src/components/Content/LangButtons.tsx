@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useDispatch, useSelector } from 'react-redux'
-import { SET_CURSOR, SET_LANGUAGE } from '../../redux/Reducer'
+import { setCursorType, setLanguage } from '../../redux/Reducer'
 import styles from './style.module.scss'
 
 const LangButtons = () => {
@@ -8,11 +8,11 @@ const LangButtons = () => {
   const language = useSelector((state: any) => state.app.language)
 
   const handleChangeLanguage = (lang: string) => {
-    return dispatch({ type: SET_LANGUAGE, payload: lang })
+    return dispatch(setLanguage(lang))
   }
 
   const handleChangeCursor = (type: string) => {
-    return dispatch({ type: SET_CURSOR, payload: type })
+    return dispatch(setCursorType(type))
   }
 
   return (

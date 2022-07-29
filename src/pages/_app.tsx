@@ -46,21 +46,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp
 
 // TODO:
-// loading animation +
-// page switch animation +
-// dark theme +
-// SEO +
-// adaptive for mobile +
-// tech skills +
-// projects page +
-// footer +
+// page switch animation
+// projects page gifs
 // language switch
 // particles animations
-// buttons animations +
+// 404 page
 // FIXME:
 // floating to top button moves to top but scrollbar somehow stays at the bottom and bugs whole locomotive scrolling (???)
-// particles not showing on dark theme. +
-// dark theme flickering +
 // fix cursor first renders at x: 0 y: 0
 // some optimizations
-// change favicon pos
+// change font-display from swap to smth else
+// header renders again when switching between pages
