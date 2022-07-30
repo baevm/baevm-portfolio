@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang='en'>
       <Head />
       <body>
         {/* fix for dark theme flickering on page load */}

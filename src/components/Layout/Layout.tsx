@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { hideLoading, showLoading } from '../../redux/Reducer'
+import { hideLoading } from '../../redux/Reducer'
+import Header from '../Content/Header'
 import CustomCursor from '../CustomCursor'
 import Loader from '../Loader/Loader'
 import styles from './style.module.scss'
@@ -11,17 +12,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const isLoading = useSelector((state: any) => state.app.isLoading)
 
   useEffect(() => {
-   
     setTimeout(() => {
       dispatch(hideLoading())
     }, 1000)
-    //dispatch(showLoading())
   })
 
 
   return (
     <div>
-     {/*  {!isLoading && } */}
       <div className={styles.background_noise} style={{ backgroundImage: "url('/noise-transparent.png')" }}></div>
 
       <AnimatePresence exitBeforeEnter>
@@ -36,8 +34,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </motion.div>
         ) : (
           <>
-          <CustomCursor />
-          <div className={styles.children}>{children}</div>
+            <Header />
+            <CustomCursor />
+            <div className={styles.children}>{children}</div>
           </>
         )}
       </AnimatePresence>
