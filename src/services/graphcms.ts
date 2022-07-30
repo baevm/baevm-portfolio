@@ -25,5 +25,7 @@ export const getProjectsList = async () => {
 
   const results = await graphcms.request(query)
 
+  
+
   return results.projects
 }

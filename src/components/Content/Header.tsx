@@ -1,11 +1,9 @@
-import { useRouter } from 'next/router'
+import BackButton from './BackButton'
 import LangButtons from './LangButtons'
 import styles from './style.module.scss'
 import ThemeButton from './ThemeButton'
-import { MdKeyboardBackspace } from 'react-icons/md'
-import BackButton from './BackButton'
 
-const Buttons = () => {
+const Header = () => {
   return (
     <div className={styles.content__header}>
       <BackButton />
@@ -17,4 +15,4 @@ const Buttons = () => {
   )
 }
 
-export default Buttons
+export default Header

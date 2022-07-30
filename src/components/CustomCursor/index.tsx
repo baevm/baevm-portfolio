@@ -71,6 +71,8 @@ const CustomCursor = () => {
     followMouse()
   }, [])
 
+ 
+
   // main cursor = inside dot
   // secondary cursor = border
   return (
@@ -82,7 +84,7 @@ const CustomCursor = () => {
         <div className={'cursor_background'}></div>
       </div>
       <div className={'particles'}>
-        <svg width='calc(100vw + 50px)' height='calc(100vh + 50px)' viewBox={`0 0 ${width + 50} ${height + 50}`}>
+        <svg width='calc(100vw + 50px)' height='calc(100vh + 50px)' viewBox={`0 0 ${width ? width + 50 : 0} ${height ? height + 50 : 0}`}>
           <defs>
             <filter id='blur-particles' x='-50%' y='-50%' width='863.5%' height='863.5%'>
               <feGaussianBlur in='SourceGraphic' stdDeviation='50'></feGaussianBlur>

@@ -1,11 +1,12 @@
-import { RichText } from '@graphcms/rich-text-react-renderer'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { useDispatch } from 'react-redux'
 import { colors } from '../../consts'
 import { setCursorType, setParticlesColor } from '../../redux/Reducer'
 import Sidebar from '../Sidebar/Sidebar'
+import Footer from './Footer'
+import ProjectDesc from './ProjectDesc'
 import styles from './style.module.scss'
 
 type Props = {
@@ -16,7 +17,6 @@ type Props = {
 const Content = ({ type, projects }: Props) => {
   const dispatch = useDispatch()
   const containerRef = useRef(null)
-  const [activeProject, setActiveProject] = useState({ id: -1, visible: false })
 
   const changeParticlesColor = (particlesColor: string) => {
     return dispatch(setParticlesColor(particlesColor))
@@ -31,7 +31,8 @@ const Content = ({ type, projects }: Props) => {
     changeCursorType(cursorType)
   }
 
-  // onMouseEnter={() => changeParticlesColor(colors.pink)}
+  console.log(projects)
+
   return (
     <LocomotiveScrollProvider
       options={{
@@ -110,56 +111,18 @@ const Content = ({ type, projects }: Props) => {
             <>
               {projects &&
                 projects.map((project: any, index) => (
-                  <section className={`${styles.motion_container_left}`} key={project.id}>
-                    <h1
-                      className={styles.content__project__title}
-                      onClick={() => setActiveProject((state) => ({ visible: !state.visible, id: index }))}
-                      onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(colors)[index])}
-                      onMouseLeave={() => changeCursorType('default')}>
-                      {project.title}
-                    </h1>
-                    {index === activeProject.id && activeProject.visible ? (
-                      <div className={styles.content__project}>
-                        <div className={styles.content__project__tech}>
-                          {project.tech.map((t: string) => (
-                            <div key={t} className={styles.project__tech__item}>
-                              {t}
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className={styles.project__main}>
-                          <div>{project.gif ? <img src={project.gif.url} alt='project gif' /> : ''}</div>
-                          <div className={styles.project__desc}>
-                            <RichText content={project.description.raw} />
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      ''
-                    )}
-                  </section>
+                  <ProjectDesc
+                    project={project}
+                    key={project.title}
+                    changeCursorAndParticles={changeCursorAndParticles}
+                    changeCursorType={changeCursorType}
+                    index={index}
+                  />
                 ))}
             </>
           )}
-          <p
-            onMouseEnter={() => changeCursorType('hamburger')}
-            onMouseLeave={() => changeCursorType('default')}
-            style={{
-              position: 'absolute',
-              zIndex: '999999',
-              bottom: 1,
-              right: 0,
-              textAlign: 'right',
-              marginBottom: '2.5rem',
-              marginRight: '2rem',
-              fontSize: '1rem',
-            }}>
-            Coded by{' '}
-            <a href='https://github.com/dezzerlol' style={{ textDecoration: 'underline' }}>
-              myself
-            </a>
-          </p>
+          <Footer />
+         
         </div>
       </div>
     </LocomotiveScrollProvider>

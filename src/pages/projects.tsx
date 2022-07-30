@@ -1,4 +1,3 @@
-import Buttons from '../components/Content/Buttons'
 import Content from '../components/Content/Content'
 import SEO from '../components/SEO'
 import { getProjectsList } from '../services/graphcms'
@@ -10,7 +9,6 @@ const Projects = ({ data }: any) => {
     <>
       <SEO title='Mikhail Baev' siteName='Projects' />
       <div className={`${styles.wrapper}`}>
-        <Buttons />
         <main className={styles.content_container}>
           <Content type='projects' projects={data} />
         </main>

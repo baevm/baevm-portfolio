@@ -34,14 +34,14 @@ const appSlice = createSlice({
       }
     },
 
-    showLoading(state, action) {
+    showLoading(state) {
       return {
         ...state,
         isLoading: true,
       }
     },
 
-    hideLoading(state, action) {
+    hideLoading(state) {
       return {
         ...state,
         isLoading: false,

@@ -33,6 +33,7 @@ const Sidebar = () => {
           href='https://github.com/dezzerlol'
           rel='noreferrer'
           target='_blank'
+          aria-label='Github'
           onMouseEnter={() => changeCursorType('hamburger')}
           onMouseLeave={() => changeCursorType('default')}>
           <TbBrandGithub fontSize='2.441rem' />
@@ -41,6 +42,7 @@ const Sidebar = () => {
           href='https://t.me/dezzerlol'
           rel='noreferrer'
           target='_blank'
+          aria-label='Telegram'
           onMouseEnter={() => changeCursorType('hamburger')}
           onMouseLeave={() => changeCursorType('default')}>
           <TbBrandTelegram fontSize='2.441rem' />
@@ -49,6 +51,7 @@ const Sidebar = () => {
           href='https://www.linkedin.com/in/mikhail-baev1/'
           rel='noreferrer'
           target='_blank'
+          aria-label='Linkedin'
           onMouseEnter={() => changeCursorType('hamburger')}
           onMouseLeave={() => changeCursorType('default')}>
           <TbBrandLinkedin fontSize='2.441rem' />
