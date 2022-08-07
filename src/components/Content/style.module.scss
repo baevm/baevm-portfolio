@@ -85,6 +85,7 @@
   padding: 2rem;
 }
 
+
 .content__title {
   text-transform: uppercase;
   font-size: calc(clamp(3.05rem, 7vw, $h1-size));
@@ -112,6 +113,7 @@
 }
 
 .content__project__title {
+ 
   text-transform: uppercase;
   font-size: calc(clamp(3.05rem, 7vw, $h2-size));
   -webkit-text-stroke-width: 1px;

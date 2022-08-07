@@ -31,7 +31,7 @@ const Content = ({ type, projects }: Props) => {
     changeCursorType(cursorType)
   }
 
-  console.log(projects)
+  
 
   return (
     <LocomotiveScrollProvider
