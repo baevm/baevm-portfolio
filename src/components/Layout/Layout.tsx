@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { hideLoading } from '../../redux/Reducer'
@@ -24,14 +24,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <AnimatePresence exitBeforeEnter>
         {isLoading ? (
-          <motion.div
+          <m.div
             key='loader'
             initial={{ opacity: 0, width: '0' }}
             animate={{ opacity: 1, width: '100%' }}
             exit={{ opacity: 0, width: '40%' }}
             transition={{ type: 'linear' }}>
             <Loader />
-          </motion.div>
+          </m.div>
         ) : (
           <>
             <Header />

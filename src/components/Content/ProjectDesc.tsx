@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import styles from './style.module.scss'
-import { colors } from '../../consts'
 import { RichText } from '@graphcms/rich-text-react-renderer'
+import { AnimatePresence, m } from 'framer-motion'
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import { colors } from '../../consts'
+import styles from './style.module.scss'
 
 const variants = {
   initial: { opacity: 0, x: -1, y: 0 },
@@ -18,7 +18,7 @@ const ProjectDesc = ({ project, changeCursorAndParticles, changeCursorType, inde
     <section className={`${styles.motion_container_left}`} key={project.id}>
       <AnimatePresence initial={false}>
         {!activeProject && (
-          <motion.h1
+          <m.h1
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             exit={{ y: -100 }}
@@ -28,11 +28,11 @@ const ProjectDesc = ({ project, changeCursorAndParticles, changeCursorType, inde
             onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(colors)[index])}
             onMouseLeave={() => changeCursorType('default')}>
             {project.title}
-          </motion.h1>
+          </m.h1>
         )}
 
         {activeProject ? (
-          <motion.div
+          <m.div
             className={styles.content__project}
             variants={variants}
             initial='initial'
@@ -62,7 +62,7 @@ const ProjectDesc = ({ project, changeCursorAndParticles, changeCursorType, inde
                 <RichText content={project.description.raw} />
               </div>
             </div>
-          </motion.div>
+          </m.div>
         ) : (
           ''
         )}

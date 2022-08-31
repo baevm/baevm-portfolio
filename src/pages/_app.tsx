@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m, LazyMotion, domAnimation } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -24,20 +24,22 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel='icon' type='image/png' href='/favicon.png' sizes='32x32' />
       </Head>
       <Provider store={store}>
-        <Layout>
-          <AnimatePresence exitBeforeEnter>
-            <motion.div
-              variants={variants}
-              initial='hidden'
-              animate='enter'
-              exit='exit'
-              transition={{ type: 'linear' }}
-              key={router.asPath}
-              id='layoutId'>
-              <Component {...pageProps} />
-            </motion.div>
-          </AnimatePresence>
-        </Layout>
+        <LazyMotion features={domAnimation}>
+          <Layout>
+            <AnimatePresence exitBeforeEnter>
+              <m.div
+                variants={variants}
+                initial='hidden'
+                animate='enter'
+                exit='exit'
+                transition={{ type: 'linear' }}
+                key={router.asPath}
+                id='layoutId'>
+                <Component {...pageProps} />
+              </m.div>
+            </AnimatePresence>
+          </Layout>
+        </LazyMotion>
       </Provider>
     </>
   )

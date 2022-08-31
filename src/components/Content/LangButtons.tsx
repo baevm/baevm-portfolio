@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCursorType, setLanguage } from '../../redux/Reducer'
 import styles from './style.module.scss'
@@ -17,7 +17,7 @@ const LangButtons = () => {
 
   return (
     <AnimatePresence>
-      <motion.span
+      <m.span
         initial={{ x: 0, y: -40, opacity: 0 }}
         animate={{ x: 0, y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -32,8 +32,8 @@ const LangButtons = () => {
         onMouseEnter={() => handleChangeCursor('hamburger')}
         onMouseLeave={() => handleChangeCursor('default')}>
         EN
-      </motion.span>
-      <motion.span
+      </m.span>
+      <m.span
         initial={{ x: 0, y: -40, opacity: 0 }}
         animate={{ x: 0, y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -48,7 +48,7 @@ const LangButtons = () => {
         onMouseEnter={() => handleChangeCursor('hamburger')}
         onMouseLeave={() => handleChangeCursor('default')}>
         RU
-      </motion.span>
+      </m.span>
     </AnimatePresence>
   )
 }

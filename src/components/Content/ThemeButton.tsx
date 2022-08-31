@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { useTheme } from '../../hooks/useTheme'
@@ -20,7 +20,7 @@ const ThemeButton = () => {
   return (
     <AnimatePresence exitBeforeEnter>
       {theme === 'dark' ? (
-        <motion.div
+        <m.div
           initial='initial'
           animate='animate'
           exit='exit'
@@ -33,9 +33,9 @@ const ThemeButton = () => {
             onMouseEnter={() => handleChangeCursor('hamburger')}
             onMouseLeave={() => handleChangeCursor('default')}
           />
-        </motion.div>
+        </m.div>
       ) : (
-        <motion.div
+        <m.div
           initial='initial'
           animate='animate'
           exit='exit'
@@ -48,7 +48,7 @@ const ThemeButton = () => {
             onMouseEnter={() => handleChangeCursor('hamburger')}
             onMouseLeave={() => handleChangeCursor('default')}
           />
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   )
