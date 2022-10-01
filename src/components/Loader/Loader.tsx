@@ -1,10 +1,10 @@
-import React from 'react'
+import Image from 'next/image'
 import styles from './style.module.scss'
 
 const Loader = () => {
   return (
     <div className={styles.loader__container}>
-      <img src='/804.png' />
+      <Image width='64' height='64' src='/804.png' alt='loader' quality={75} />
     </div>
   )
 }

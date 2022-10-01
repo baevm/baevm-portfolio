@@ -31,8 +31,6 @@ const Content = ({ type, projects }: Props) => {
     changeCursorType(cursorType)
   }
 
-  
-
   return (
     <LocomotiveScrollProvider
       options={{
@@ -83,12 +81,12 @@ const Content = ({ type, projects }: Props) => {
               <section className={`${styles.motion_container_left}`}>
                 <div className={styles.content__text}>
                   <h5>scss</h5>
-                  <h5>styled-components</h5>
                   <h5>prisma</h5>
-                  <h5>mongodb</h5>
-                  <h5>firebase</h5>
+                  <h5>node.js</h5>
+                  <h5>trpc</h5>
                   <h5>graphql</h5>
                   <h5>git</h5>
+                  <h5>docker</h5>
                 </div>
               </section>
               <section className={`${styles.motion_container}`}>
@@ -122,7 +120,6 @@ const Content = ({ type, projects }: Props) => {
             </>
           )}
           <Footer />
-         
         </div>
       </div>
     </LocomotiveScrollProvider>

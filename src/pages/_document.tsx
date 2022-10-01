@@ -4,6 +4,9 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head />
+      <link rel='preload' href='/fonts/PPMonumentExtended-Black.otf' as='font' crossOrigin='' type='font/otf' />
+      <link rel='preload' href='/fonts/PPMonumentExtended-Regular.otf' as='font' crossOrigin='' type='font/otf' />
+      <link rel='preload' href='/fonts/SpaceMono-Regular.ttf' as='font' crossOrigin='' type='font/ttf' />
       <body>
         {/* fix for dark theme flickering on page load */}
         <script

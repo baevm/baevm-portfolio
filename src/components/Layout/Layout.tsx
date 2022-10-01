@@ -17,7 +17,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     }, 1000)
   })
 
-
   return (
     <div>
       <div className={styles.background_noise} style={{ backgroundImage: "url('/noise-transparent.png')" }}></div>
