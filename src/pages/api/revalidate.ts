@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    await res.revalidate('/path-to-revalidate')
+    await res.revalidate('/projects')
     return res.json({ revalidated: true })
   } catch (err) {
     // If there was an error, Next.js will continue
