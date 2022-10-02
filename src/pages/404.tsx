@@ -1,10 +1,8 @@
 import Link from 'next/link'
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { setCursorType } from '../redux/Reducer'
+import useCursorType from '../hooks/useCursorType'
 
 const Custom404 = () => {
-  const dispatch = useDispatch()
+  const { changeCursorType } = useCursorType()
 
   return (
     <div
@@ -20,8 +18,8 @@ const Custom404 = () => {
       <Link href='/'>
         <a
           style={{ padding: '1rem', fontSize: '1.8rem', textDecoration: 'underline' }}
-          onMouseEnter={() => dispatch(setCursorType('hamburger'))}
-          onMouseLeave={() => dispatch(setCursorType('default'))}>
+          onMouseEnter={() => changeCursorType('hamburger')}
+          onMouseLeave={() => changeCursorType('default')}>
           Home page
         </a>
       </Link>

@@ -3,6 +3,8 @@ import { AnimatePresence, m } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
 import { colors } from '../../consts'
+import useCursorType from '../../hooks/useCursorType'
+import useParticlesColor from '../../hooks/useParticlesColor'
 import styles from './style.module.scss'
 
 const variants = {
@@ -11,8 +13,21 @@ const variants = {
   exit: { opacity: 0, x: 1, y: 0 },
 }
 
-const ProjectDesc = ({ project, changeCursorAndParticles, changeCursorType, index }: any) => {
+const ProjectDesc = ({ project, index }: any) => {
   const [activeProject, setActiveProject] = useState(false)
+
+  const { changeCursorType } = useCursorType()
+  const { changeParticlesColor } = useParticlesColor()
+
+  const changeCursorAndParticles = (cursorType: string, particlesColor: string) => {
+    changeParticlesColor(particlesColor)
+    changeCursorType(cursorType)
+  }
+
+  const handleClick = () => {
+    setActiveProject((state) => !state)
+    changeCursorType('default')
+  }
 
   return (
     <section className={`${styles.motion_container_left}`} key={project.id}>
@@ -24,7 +39,7 @@ const ProjectDesc = ({ project, changeCursorAndParticles, changeCursorType, inde
             exit={{ y: -100 }}
             transition={{ type: 'spring', stiffness: 200, damping: 30 }}
             className={styles.content__project__title}
-            onClick={() => setActiveProject((state) => !state)}
+            onClick={handleClick}
             onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(colors)[index])}
             onMouseLeave={() => changeCursorType('default')}>
             {project.title}
@@ -41,7 +56,7 @@ const ProjectDesc = ({ project, changeCursorAndParticles, changeCursorType, inde
             transition={{ type: 'spring', stiffness: 200, damping: 30 }}>
             <h1
               className={styles.content__project__title}
-              onClick={() => setActiveProject((state) => !state)}
+              onClick={handleClick}
               onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(colors)[index])}
               onMouseLeave={() => changeCursorType('default')}>
               {project.title}

@@ -9,7 +9,7 @@ const Header = () => {
     <div className={styles.content__header}>
       <BackButton />
       <div className={styles.content__buttons}>
-        <LangButtons />
+        {/* <LangButtons /> */}
         <ThemeButton />
       </div>
     </div>

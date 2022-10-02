@@ -1,15 +1,10 @@
 import { TbBrandGithub, TbBrandLinkedin, TbBrandTelegram } from 'react-icons/tb'
-import { useDispatch } from 'react-redux'
-import { setCursorType } from '../../redux/Reducer'
+import useCursorType from '../../hooks/useCursorType'
 import FloatingButton from '../FloatingButton/FloatingButton'
 import styles from './style.module.scss'
 
 const Sidebar = () => {
-  const dispatch = useDispatch()
-
-  const changeCursorType = (value: string) => {
-    return dispatch(setCursorType(value))
-  }
+  const { changeCursorType } = useCursorType()
 
   return (
     <div className={styles.sidebar}>
