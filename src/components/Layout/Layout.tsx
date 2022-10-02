@@ -16,18 +16,20 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       dispatch(hideLoading())
     }, 1000)
   })
-
+  
+  
+  
   return (
     <div>
       <div className={styles.background_noise} style={{ backgroundImage: "url('/noise-transparent.png')" }}></div>
-
+      
       <AnimatePresence exitBeforeEnter>
         {isLoading ? (
           <m.div
             key='loader'
-            initial={{ opacity: 0, width: '0' }}
-            animate={{ opacity: 1, width: '100%' }}
-            exit={{ opacity: 0, width: '40%' }}
+            initial={{ opacity: 0, clipPath: 'circle(119.7% at 15% 15%)' }}
+            animate={{ opacity: 1,  clipPath: 'circle(119.7% at 15% 15%)' }}
+            exit={{ opacity: 0,  clipPath: 'circle(14.8% at 14% 15%)' }}
             transition={{ type: 'linear' }}>
             <Loader />
           </m.div>

@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 animate='enter'
                 exit='exit'
                 transition={{ type: 'linear' }}
-                key={router.asPath}
+                key={router.route}
                 id='layoutId'>
                 <Component {...pageProps} />
               </m.div>
