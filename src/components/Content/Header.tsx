@@ -1,10 +1,9 @@
-import BackButton from './BackButton'
-import LangButtons from './LangButtons'
+import BackButton from './Buttons/BackButton'
+import LangButtons from './Buttons/LangButtons'
 import styles from './style.module.scss'
-import ThemeButton from './ThemeButton'
+import ThemeButton from './Buttons/ThemeButton'
 
 const Header = () => {
-  
   return (
     <div className={styles.content__header}>
       <BackButton />

@@ -15,6 +15,7 @@ const variants = {
 
 const ProjectDesc = ({ project, index }: any) => {
   const [activeProject, setActiveProject] = useState(false)
+  const [isImageLoading, setIsImageLoading] = useState(true)
 
   const { changeCursorType } = useCursorType()
   const { changeParticlesColor } = useParticlesColor()
@@ -70,12 +71,23 @@ const ProjectDesc = ({ project, index }: any) => {
             </div>
 
             <div className={styles.project__main}>
-              <div className={styles.project__picture}>
-                {project.gif ? <Image src={project.gif.url} layout='fill' quality={75} alt='project gif' /> : ''}
+              <div className={styles.project__picture__container}>
+                {project.gif && (
+                  <Image
+                    src={project.gif.url}
+                    className={isImageLoading ? styles.skeleton_box : ''}
+                    layout='fill'
+                    quality={75}
+                    alt='project gif'
+                    onLoadingComplete={() => setIsImageLoading(false)}
+                  />
+                )}
               </div>
+
               <div className={styles.project__desc}>
                 <RichText content={project.description.raw} />
               </div>
+
             </div>
           </m.div>
         ) : (
