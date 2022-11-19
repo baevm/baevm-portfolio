@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { MdKeyboardBackspace } from 'react-icons/md'
-import useCursorType from '../../hooks/useCursorType'
-import styles from './style.module.scss'
+import useCursorType from '../../../hooks/useCursorType'
+import styles from '../style.module.scss'
 
 const BackButton = () => {
   const router = useRouter()
