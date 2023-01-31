@@ -1,0 +1,17 @@
+.content__header__chip {
+  margin-right: 0.5rem;
+  padding: 3px 8px 3px 8px;
+  border-radius: 50px;
+}
+
+.content__header__back {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary-color);
+  line-height: 25px;
+}
+
+.content__header__back span {
+  margin-left: 5px;
+  margin-top: 2px;
+}

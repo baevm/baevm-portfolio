@@ -3,7 +3,7 @@ import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import Sidebar from '../Sidebar/Sidebar'
 import Footer from './Footer'
 import MeDesc from './MeDesc'
-import ProjectDesc from './ProjectDesc'
+import ProjectDesc from './Projects/ProjectDesc'
 import styles from './style.module.scss'
 
 type Props = {
@@ -13,6 +13,9 @@ type Props = {
 
 const Content = ({ type, projects }: Props) => {
   const containerRef = useRef(null)
+
+  console.log({ projects })
+
 
   return (
     <LocomotiveScrollProvider

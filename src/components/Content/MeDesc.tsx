@@ -50,6 +50,7 @@ const MeDesc = () => {
           <h5>scss</h5>
           <h5>prisma</h5>
           <h5>node.js</h5>
+          <h5>nest.js</h5>
           <h5>trpc</h5>
           <h5>graphql</h5>
           <h5>git</h5>

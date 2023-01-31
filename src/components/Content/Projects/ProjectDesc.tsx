@@ -1,11 +1,11 @@
 import { RichText } from '@graphcms/rich-text-react-renderer'
 import { AnimatePresence, m } from 'framer-motion'
-import Image from 'next/image'
 import { useState } from 'react'
-import { colors } from '../../consts'
-import useCursorType from '../../hooks/useCursorType'
-import useParticlesColor from '../../hooks/useParticlesColor'
+import { colors } from '../../../consts'
+import useCursorType from '../../../hooks/useCursorType'
+import useParticlesColor from '../../../hooks/useParticlesColor'
 import styles from './style.module.scss'
+import Images from './Images/Images'
 
 const variants = {
   initial: { opacity: 0, x: -1, y: 0 },
@@ -19,7 +19,7 @@ const ProjectDesc = ({ project, index }: any) => {
 
   const { changeCursorType } = useCursorType()
   const { changeParticlesColor } = useParticlesColor()
-
+ 
   const changeCursorAndParticles = (cursorType: string, particlesColor: string) => {
     changeParticlesColor(particlesColor)
     changeCursorType(cursorType)
@@ -71,23 +71,10 @@ const ProjectDesc = ({ project, index }: any) => {
             </div>
 
             <div className={styles.project__main}>
-              <div className={styles.project__picture__container}>
-                {project.gif && (
-                  <Image
-                    src={project.gif.url}
-                    className={isImageLoading ? styles.skeleton_box : ''}
-                    layout='fill'
-                    quality={75}
-                    alt='project gif'
-                    onLoadingComplete={() => setIsImageLoading(false)}
-                  />
-                )}
-              </div>
-
+             <Images images={project.images} />
               <div className={styles.project__desc}>
                 <RichText content={project.description.raw} />
               </div>
-
             </div>
           </m.div>
         ) : (

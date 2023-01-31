@@ -1,7 +1,6 @@
 import { gql, GraphQLClient } from 'graphql-request'
 
 export const url: string = process.env.GRAPHCMS_URL!
-export const apikey = `Bearer ${process.env.GRAPHCMS_KEY}`
 
 export const graphcms = new GraphQLClient(url)
 
@@ -13,7 +12,8 @@ export const getProjectsList = async () => {
         title
         githubLink
         tech
-        gif {
+        images {
+          id
           url
         }
         description {
@@ -24,8 +24,6 @@ export const getProjectsList = async () => {
   `
 
   const results = await graphcms.request(query)
-
-  
 
   return results.projects
 }

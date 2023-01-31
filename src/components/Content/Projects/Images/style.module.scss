@@ -1,0 +1,36 @@
+.embla {
+  position: relative;
+  margin-right: 3rem;
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  width: clamp(340px, 80vw, 740px);
+  height: clamp(220px, 40vw, 420px);
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  object-fit: cover;
+}
+
+.slide__button {
+  background: none;
+  position: absolute;
+  border: 0;
+  color: white;
+  mix-blend-mode: difference;
+  top: 50%;
+}
+
+.embla__prev {
+  @extend .slide__button;
+  left: 1rem;
+}
+
+.embla__next {
+  @extend .slide__button;
+  right: 1rem;
+}
