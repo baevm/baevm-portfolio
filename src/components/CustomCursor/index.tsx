@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import { useSelector } from 'react-redux'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
+import useWindowDimensions from '@hooks/useWindowDimensions'
 
 const CustomCursor = () => {
   const { height, width } = useWindowDimensions()

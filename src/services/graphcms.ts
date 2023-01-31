@@ -7,7 +7,7 @@ export const graphcms = new GraphQLClient(url)
 export const getProjectsList = async () => {
   const query = gql`
     query {
-      projects {
+      projects(orderBy: createdAt_DESC) {
         id
         title
         githubLink

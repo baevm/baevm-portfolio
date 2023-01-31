@@ -3,9 +3,9 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
-import Layout from '../components/Layout/Layout'
-import store from '../redux/store'
-import '../components/CustomCursor/style.scss' // styles for cursor because .module not working properly
+import Layout from '@components/Layout/Layout'
+import store from '@redux/store'
+import '@components/CustomCursor/style.scss' // styles for cursor because .module not working properly
 import '../styles/globals.scss'
 import '../styles/locomotive-scroll.scss'
 

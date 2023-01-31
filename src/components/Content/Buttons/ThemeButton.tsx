@@ -1,7 +1,7 @@
 import { AnimatePresence, m } from 'framer-motion'
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
-import useCursorType from '../../../hooks/useCursorType'
-import { useTheme } from '../../../hooks/useTheme'
+import useCursorType from '@hooks/useCursorType'
+import { useTheme } from '@hooks/useTheme'
 
 const ThemeButton = () => {
   const variants = {

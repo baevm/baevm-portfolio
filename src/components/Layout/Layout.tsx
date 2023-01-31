@@ -1,7 +1,7 @@
 import { AnimatePresence, m } from 'framer-motion'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { hideLoading } from '../../redux/Reducer'
+import { hideLoading } from '@redux/Reducer'
 import Header from '../Content/Header'
 import CustomCursor from '../CustomCursor'
 import Loader from '../Loader/Loader'

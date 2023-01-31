@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import Content from '../components/Content/Content'
-import SEO from '../components/SEO'
+import Content from '@components/Content/Content'
+import SEO from '@components/SEO'
 import styles from '../styles/Index.module.scss'
 
 const Home: NextPage = () => {

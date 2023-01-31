@@ -1,9 +1,9 @@
 import { RichText } from '@graphcms/rich-text-react-renderer'
 import { AnimatePresence, m } from 'framer-motion'
 import { useState } from 'react'
-import { colors } from '../../../consts'
-import useCursorType from '../../../hooks/useCursorType'
-import useParticlesColor from '../../../hooks/useParticlesColor'
+import { COLORS } from '@consts/colors'
+import useCursorType from '@hooks/useCursorType'
+import useParticlesColor from '@hooks/useParticlesColor'
 import styles from './style.module.scss'
 import Images from './Images/Images'
 
@@ -41,7 +41,7 @@ const ProjectDesc = ({ project, index }: any) => {
             transition={{ type: 'spring', stiffness: 200, damping: 30 }}
             className={styles.content__project__title}
             onClick={handleClick}
-            onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(colors)[index])}
+            onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(COLORS)[index])}
             onMouseLeave={() => changeCursorType('default')}>
             {project.title}
           </m.h1>
@@ -58,7 +58,7 @@ const ProjectDesc = ({ project, index }: any) => {
             <h1
               className={styles.content__project__title}
               onClick={handleClick}
-              onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(colors)[index])}
+              onMouseEnter={() => changeCursorAndParticles('hamburger', Object.values(COLORS)[index])}
               onMouseLeave={() => changeCursorType('default')}>
               {project.title}
             </h1>

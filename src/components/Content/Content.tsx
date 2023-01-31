@@ -14,9 +14,6 @@ type Props = {
 const Content = ({ type, projects }: Props) => {
   const containerRef = useRef(null)
 
-  console.log({ projects })
-
-
   return (
     <LocomotiveScrollProvider
       options={{

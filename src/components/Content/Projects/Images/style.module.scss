@@ -13,7 +13,7 @@
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .slide__button {

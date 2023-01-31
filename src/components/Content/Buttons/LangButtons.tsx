@@ -1,6 +1,6 @@
 import { AnimatePresence, m } from 'framer-motion'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCursorType, setLanguage } from '../../../redux/Reducer'
+import { setCursorType, setLanguage } from '@redux/Reducer'
 import styles from './style.module.scss'
 
 const LangButtons = () => {

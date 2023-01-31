@@ -1,10 +1,9 @@
-import Content from '../components/Content/Content'
-import SEO from '../components/SEO'
-import { getProjectsList } from '../services/graphcms'
+import Content from '@components/Content/Content'
+import SEO from '@components/SEO'
+import { getProjectsList } from '@services/graphcms'
 import styles from '../styles/Index.module.scss'
 
 const Projects = ({ data }: any) => {
-  
   return (
     <>
       <SEO title='Mikhail Baev' siteName='Projects' />
@@ -28,10 +27,3 @@ export const getStaticProps = async () => {
 }
 
 export default Projects
-
-
-
-
-
-
-

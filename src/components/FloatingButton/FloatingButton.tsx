@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import styles from './style.module.scss'
+import { useState } from 'react'
 import { MdNorth, MdSouth } from 'react-icons/md'
-import { useLocomotiveScroll } from 'react-locomotive-scroll'
+import styles from './style.module.scss'
 
 const FloatingButton = () => {
   const [pos, setPos] = useState(0)

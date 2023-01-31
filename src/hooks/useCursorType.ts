@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { setCursorType } from '../redux/Reducer'
+import { setCursorType } from '@redux/Reducer'
 
 export default function useCursorType() {
   const dispatch = useDispatch()

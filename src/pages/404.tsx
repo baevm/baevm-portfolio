@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import useCursorType from '../hooks/useCursorType'
+import useCursorType from '@hooks/useCursorType'
 
 const Custom404 = () => {
   const { changeCursorType } = useCursorType()

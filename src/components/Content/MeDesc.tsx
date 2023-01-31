@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { colors } from '../../consts'
-import useCursorType from '../../hooks/useCursorType'
-import useParticlesColor from '../../hooks/useParticlesColor'
+import { COLORS } from '@consts/colors'
+import useCursorType from '@hooks/useCursorType'
+import useParticlesColor from '@hooks/useParticlesColor'
 import AnimatedTitle from './AnimatedTitle'
 import styles from './style.module.scss'
 
@@ -19,7 +19,7 @@ const MeDesc = () => {
       <section className={`${styles.motion_container}`}>
         <h1
           className={styles.content__title}
-          onMouseEnter={() => changeCursorAndParticles('hamburger', colors.red)}
+          onMouseEnter={() => changeCursorAndParticles('hamburger', COLORS.red)}
           onMouseLeave={() => changeCursorType('default')}
           onClick={() => changeCursorType('default')}>
           <Link href='/projects'>

@@ -1,4 +1,4 @@
-import useCursorType from '../../hooks/useCursorType'
+import useCursorType from '@hooks/useCursorType'
 import styles from './style.module.scss'
 
 const Footer = () => {
