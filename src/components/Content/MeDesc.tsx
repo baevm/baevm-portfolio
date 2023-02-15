@@ -61,10 +61,10 @@ const MeDesc = () => {
         <AnimatedTitle>message me:</AnimatedTitle>
         <div className={styles.content__links}>
           <h5 onMouseEnter={() => changeCursorType('hamburger')} onMouseLeave={() => changeCursorType('default')}>
-            <a href='mailto:dezzerlul@gmail.com'>dezzerlul@gmail.com</a>
+            <a href='mailto:baev2m@gmail.com'>baev2m@gmail.com</a>
           </h5>
           <h5 onMouseEnter={() => changeCursorType('hamburger')} onMouseLeave={() => changeCursorType('default')}>
-            <a href='https://t.me/dezzerlol'>@dezzerlol</a>
+            <a href='https://t.me/dezzerlol'>t.me/dezzerlol</a>
           </h5>
         </div>
       </section>
